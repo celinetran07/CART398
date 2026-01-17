@@ -1,10 +1,9 @@
 // @title W01-05
 // @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
-// @by vigliensoni
-// @date Jan 5, 2026
+// @by celine tran
+// @date Jan 16, 2026
 
-// 5
-
+// 05
 setcps(150/60/4)
 s("xylophone_medium_ff:8!4,[bd bd ~ rim], casiovl1_bd:1 casiovl1_bd:2, ~ [circuitsdrumtracks_ht [bossdr55_sd casiosk1_bd]]/2, gm_lead_3_calliope@7" )
 
