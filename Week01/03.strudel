@@ -5,4 +5,4 @@
 
 // 03
 setcps(1)
-s("[[bd [cp rim] ~ [hh [hh hh]]]/2 . bd cp cp rim], bd sd ~ sd, hh*4")
+s("[[bd [cp rim] ~ [hh [hh hh]]]/2 . bd cp cp rim], bd sd ~ sd, hh*4, [balafon:6]!2*2")
