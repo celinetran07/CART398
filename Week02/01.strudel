@@ -1,0 +1,11 @@
+// @title W02-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 19, 2026
+
+// 01
+stack(
+  note("<[36 48]*4 [34 46]*4 [41 53]*4 [39 51]*4>").sound("sawtooth"),
+  s(" bd [hh hh] sd [hh bd] bd - cp@2"),
+  note("[[59 62 64](8,16)<0 1 0 1>]@5").sound("piano").slow(2).legato(0.9).gain(0.8)
+  ).crush(4)._punchcard()
