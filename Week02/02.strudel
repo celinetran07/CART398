@@ -1,0 +1,39 @@
+// @title W02-02
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 20, 2026
+
+// 02
+
+stack(
+  note("db eb gb gb ab bf")
+  .sound("gm_voice_oohs")
+  .gain(0.5)
+  .slow(3)
+  .room(0.6)
+  .size(0.8),
+  
+  note("[db bb]/2")
+  .sound("piano")
+  .legato(1.2)
+  .gain(0.7)
+  .slow(2),
+  
+  note("eb gb ab")
+  .sound("gm_string_ensemble_1")
+  .slow(3)
+  .gain(0.3)
+  .legato(1.5)
+  .release(0.4),
+
+  note("<~ db ~ gb ~>")
+  .sound("gm_tubular_bells")
+  .slow(2)
+  .gain(0.3)
+  .release(0.4),
+  
+  note("db eb gb ab bb db bb ab | gb ab bb db eb db bb ab | db eb gb ab ~ gb eb db| db eb gb ab bb ~ ab gb | eb gb ab bb db bb ab gb")
+  .sound("piano")
+  .gain(0.7)
+  .slow(2),
+)._punchcard()
