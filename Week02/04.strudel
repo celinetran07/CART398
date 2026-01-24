@@ -1,0 +1,39 @@
+// @title W02-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 22, 2026
+
+// 04
+
+samples({
+  sound_01: 'https://cdn.freesound.org/previews/3/3131_409-lq.mp3',
+  sound_06: 'https://cdn.freesound.org/previews/77/77040_1078218-lq.mp3',
+  sound_07:'https://cdn.freesound.org/previews/77/77041_1078218-lq.mp3',
+  sound_08: 'https://cdn.freesound.org/previews/132/132489_1696779-lq.mp3'
+  
+})
+
+setcps(140/60/4)
+
+stack(
+  s("bd:5 (1,3,3.05)")
+    .gain(1.3),
+
+  s("~ sound_01").gain(1.3),
+  
+  s("~ [bd:5 ,sd:3] ~ [bd:5 ,sd:3]")
+    .gain(0.9),
+
+  s("<sound_08 sound_08>")
+    .legato(0.7),
+
+  s("<[ supersaw:1  supersaw:6, supersaw:1  supersaw:5]  supersaw:5 [ supersaw:1  supersaw:5, supersaw:1  supersaw:5]  supersaw:5  supersaw:5>*4").legato(0.8).gain(2),
+  
+  s("bytebeat:5*2")
+    .gain(0.15)
+    .slow(2),
+
+  s("<sound_07 sound_06>@3")
+    .room(0.6)
+    .gain(0.4)
+)
