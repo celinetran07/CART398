@@ -1,0 +1,33 @@
+// @title W02-03
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 21, 2026
+
+// 03
+
+setcps(150/60/4)
+
+stack(
+  s("<wt_digital_crickets:1(3,7) ~>")
+    .legato(1.3)
+    .gain(0.3)
+    .mask("<1 1 ~ ~>"),
+
+  s("[bytebeat ~ ~]")
+    .gain(0.15)
+    .slow(2),
+
+  s("[didgeridoo:12](4,7) |[didgeridoo:12](3,7)")
+    .gain(0.6)
+    .room(0.4),
+
+  s("bd:4 (1,3,3.05)")
+    .gain(1.2),
+
+  s("gm_choir_aahs:4 | gm_choir_aahs:3 | gm_choir_aahs:1 | gm_choir_aahs:2")
+    .gain(0.6)
+    .room(0.4)
+    .mask("<~ ~ ~ 1>"),
+  
+  s("<~ shaker_large:6>").legato(0.4)
+).every(4, x=>x.slow(2))
