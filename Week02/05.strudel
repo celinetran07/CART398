@@ -1,0 +1,16 @@
+// @title W02-05
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 23, 2026
+
+// 05
+samples({
+  sound_02: 'https://cdn.freesound.org/previews/22/22011_45941-lq.mp3'
+})
+
+stack(
+  s("[[bd [cp rim] ~ [hh [hh hh]]]/2 . bd cp cp rim], bd sd ~ sd, hh*4, [balafon:6]!2*2"),
+  s("[piano:1 kawai:37]*2, [casio:2 casio:1 ~ casio:3]*2, <gtr:1 ~ gtr:2 gtr:3>"),
+  s("xylophone_medium_ff:8!4,[bd bd ~ rim], casiovl1_bd:1 casiovl1_bd:2, ~ [circuitsdrumtracks_ht [bossdr55_sd casiosk1_bd]]/2" ),
+  s("sound_02?0.2").ply(4).gain(0.15)
+  ).every(4, x=>x.slow(2))
