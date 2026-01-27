@@ -1,0 +1,22 @@
+// @title W03-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Jan 26, 2026
+
+// 01
+
+samples({
+  sound_11: 'https://cdn.freesound.org/previews/348/348568_5614036-lq.mp3'
+})
+
+setcpm(90/4)
+stack(
+  note("[36 43]*2, 52 59 62 64").sound("sawtooth").gain(0.25),
+  s("[sound_11  sound_11] sound_11(3,14)".gain(0.2)),
+  sound(`
+[-  -  oh - ] [-  -  -  - ] [-  -  -  - ] [-  -  -  - ],
+[hh:5 hh -  - ] [hh -  hh - ] [hh -  hh - ] [hh -  hh - ],
+[-  -  -  - ] [cp:2 -  -  - ] [-  -  -  - ] [cp:2 -  -  - ],
+[bd:5 -  -  - ] [-  -  -  bd:5] [-  -  bd:5 - ] [-  -  -  bd:5]
+`).gain(0.3)
+  )
