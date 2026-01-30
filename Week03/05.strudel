@@ -16,10 +16,12 @@ stack(
     .clip(0.95)                                  
     .sometimesBy(0.15, x => x.speed(1.5).gain(0.8)), 
 
-  s("bd:5")
+  s("bd:5 bd:5")
     .gain("<0.95 0.85>")                          
     .shape(0.2).clip(0.9)                        
-    .every(4, fast(1.5)),                        
+    .fast(2.5)
+    .every(4, fast(1.5))
+  ,                        
 
   n("0 1 2 3".fast(2))                            
     .s("bass")
@@ -28,7 +30,7 @@ stack(
     .sometimes(x => x.n("0 2 1 3").gain(0.7))     
     .every(6, rev), 
   
-  s("gm_fx_brightness:12@3 ~ ").gain(0.4),
+  s("gm_fx_brightness:12@3 ~ ").gain(0.4).legato(1.5),
   
   stack(
     s("rimshot").struct("~ ~ ~ x ~ ~ x ~".fast(2))
