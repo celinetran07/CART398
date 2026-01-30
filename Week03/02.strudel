@@ -5,6 +5,10 @@
 
 // 02
 
+samples({
+  sound_09:'https://cdn.freesound.org/previews/708/708046_13313392-lq.mp3'
+})
+
 stack(
   s("sound_09")
     .legato(0.9)
