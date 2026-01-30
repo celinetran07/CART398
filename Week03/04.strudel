@@ -15,7 +15,7 @@ stack(
   s("rave").begin("<[.25]!6*8>").fast(2).cut(1).splice(8,  "0 1 [2 3 0]@2 3 0@2 7"),
   
   s("noise").gain(0.4).lpf(sine.range(200, 12000).slow(16)).hpf(300)
-    .every(16, x => x.fast(2).gain(0.7))  // double speed bursts
+    .every(16, x => x.fast(2).gain(0.7)) 
     .room(0.8).orbit(5),
 
   s("bd:8*4, [~ bd:8*2]").gain(1.1).shape(0.3).clip(1)
