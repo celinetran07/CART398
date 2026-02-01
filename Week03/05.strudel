@@ -30,13 +30,5 @@ stack(
     .sometimes(x => x.n("0 2 1 3").gain(0.7))     
     .every(6, rev), 
   
-  s("gm_fx_brightness:12@3 ~ ").gain(0.4).legato(1.5),
-  
-  stack(
-    s("rimshot").struct("~ ~ ~ x ~ ~ x ~".fast(2))
-      .gain(0.4)
-      .speed(1.1)
-      .room(0.2)
-  )
-  .slow(1.5)                                      
+  s("gm_fx_brightness:12@3 ~ ").gain(0.4).legato(1.5)                             
 )
