@@ -1,0 +1,29 @@
+// @title W04-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 2, 2026
+
+// 01
+
+samples({
+  guitar_1:'https://cdn.freesound.org/previews/660/660574_11698492-lq.mp3',
+  guitar_02:'https://cdn.freesound.org/previews/560/560553_2095164-lq.mp3',
+  bongo_1:'https://cdn.freesound.org/previews/47/47249_177850-lq.mp3',
+  bongo_2:'https://cdn.freesound.org/previews/265/265150_4939125-lq.mp3',
+  bongo_3:'https://cdn.freesound.org/previews/734/734155_4459226-lq.mp3',
+  bongo_mix:'https://cdn.freesound.org/previews/133/133479_1105584-lq.mp3'
+})
+
+stack(
+s("shaker_small:16*2!2(8,10) ~").gain(0.2),
+s("bongo_3").legato(2).gain(0.25),
+s("bongo_mix").scrub("<0.8@2>").loop(1).clip(1).gain(0.2),
+  
+note("50 53 57 57 50 53 57 50 52 ~ 48 52 55 52 ~")
+    .sound("gm_acoustic_guitar_steel:7").gain(0.3).room(0.2).loop(2)
+    .mask(" <0 1 1 1 1 1 1 1>"),  
+
+  note("60 62 65 69 62 65 69 ~ 60 64 67 60 64 67 68")
+    .sound("gm_acoustic_guitar_steel:7").gain(0.3).legato(1.2)
+    .mask("<1 0 1 1 1 1 1 1>")
+)
