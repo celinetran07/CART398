@@ -1,0 +1,17 @@
+
+// @title W04-02
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 3, 2026
+
+// 02
+
+samples({
+  voice:'https://cdn.freesound.org/previews/231/231588_2962530-lq.mp3'
+})
+
+$:s("voice/100").cut(1).slice(28, "<~ ~ ~ ~  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22>").fit().delay(0.2).room(0.5).dist(3).gain(0.2)
+$:s("bd*4").sometimesBy(0.1, x => x.ply(2))  
+$:s("hh*8").sometimesBy(0.3, rev)
+$: n("0 1 2 3 4 5 6 7 6 5 4 3 2 1 0").scale("C:minor").sound("insect").gain(0.3).degradeBy(0.5)
+$:chord("<Am [C ~ ] D F Am ~ E [Am ~] E>!2*2").voicing().degradeBy(0.3)
