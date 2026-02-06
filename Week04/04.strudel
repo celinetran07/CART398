@@ -1,0 +1,20 @@
+// @title W04-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 05, 2026
+
+// 04
+
+samples({
+  voice321:'https://cdn.freesound.org/previews/541/541822_8323418-lq.mp3',
+})
+
+$: s("voice321").slice(8, "<0 1.5 3 ~ ~>").room(0.5).gain(0.2).cut(1)
+$: s("voice321").slice(8, "<~ ~ ~ ~ 4.5>").room(0.5).gain(0.4).cut(1)
+
+$: note("[c eb g <f bb>](3,8,<0 1>)".sub(12))
+    .s("supersaw").detune(0.25).unison("<3 5 7>".slow(4))
+.stack(s("bd*2").bank('RolandTR909'))
+.sometimes(add(note(12)))
+.juxBy(.5,rev)
+.every(4, x=>x.fast(2))
