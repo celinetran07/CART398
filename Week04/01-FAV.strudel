@@ -15,15 +15,17 @@ samples({
 })
 
 stack(
-s("shaker_small:16*2!2(8,10) ~").gain(0.2),
-s("bongo_3").legato(2).gain(0.25),
-s("bongo_mix").scrub("<0.8@2>").loop(1).clip(1).gain(0.2),
+s("shaker_small:16*2!2(8,10) ~").gain(0.2).delay(0.2),
+//s("bongo_3").scrub("<0.35@8>").loop(1).gain(0.2).clip(1),
+  
+s("bongo_mix").scrub("<0.8@2>").loop(1).clip(1).gain(0.2).legato(1.2),
+s(" [[~ 9000_perc:3]!2   9000_perc:2 [~ alesissr16_perc:9]!2 9000_perc:2 [9000_perc:1 ~] [9000_perc:5 akailinn_cb:1]!2 akaimpc60_perc:5]!3/4").gain(0.2).room(0.2).every(4, x=>x.rev()),
   
 note("50 53 57 57 50 53 57 50 52 ~ 48 52 55 52 ~")
-    .sound("gm_acoustic_guitar_steel:7").gain(0.3).room(0.2).loop(2)
+    .sound("gm_acoustic_guitar_steel:7").gain(0.3).room(0.2).loop(2).legato(2)
     .mask(" <0 1 1 1 1 1 1 1>"),  
 
   note("60 62 65 69 62 65 69 ~ 60 64 67 60 64 67 68")
     .sound("gm_acoustic_guitar_steel:7").gain(0.3).legato(1.2)
     .mask("<1 0 1 1 1 1 1 1>")
-)
+).every(8, x=>x.degradeBy(0.2))
