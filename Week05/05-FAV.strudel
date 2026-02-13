@@ -24,7 +24,7 @@ stack(
   note("a#5 ~ a#5 d6 b5 a#5 d6 b5@3 a#5 d#6 [d6 d#6 d6] b5 a#5").sound("gm_pan_flute:1").gain(0.4),
   note("~"),
   note("<d#4 g#4 a#4 b4 ~ a#4 b4 [a#4 b4] a#4 g#4>*8").sound("gm_lead_5_charang:1").room(0.5),
-)._scope().color("pink")
+).every(2, x=>x.rev()).every(5, x=>x.rev()).color("pink")._scope()
 ,
    note("<a#4, g4, d#4> <b4, g#4,e4> <g#4,f4,c#4>").sound("gm_synth_choir:7").struct("1 0 0 0 1 0 0 1")._scope(),
   s("9000_bd").struct("x ~ ~ x ~ ~ x ~ ~ x x ~ ~ ~ ~ ~ ~ ~ x ~ ~ x ~ ~ x ~ ~ x ~ ~ ~ ~").slow(2).pan(rand.slow(4)),
