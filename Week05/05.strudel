@@ -10,13 +10,14 @@
 // @by celine tran
 // @date Feb 13, 2026
 
-samples({
-  voice:'https://cdn.freesound.org/previews/192/192111_3568632-lq.mp3',
+// samples({
+//   voice:'https://cdn.freesound.org/previews/192/192111_3568632-lq.mp3',
   
-})
+// })
+
 stack(
   cat(
-  s("voice").slice(5, "<0>").delay(0.2).room(0.5).dist(3).legato(1.05).gain(0.1),
+  //s("voice").slice(5, "<0>").delay(0.2).room(0.5).dist(3).legato(1.05).gain(0.1),
   note("d#4 e5 d#5 b4 a#4 ~ ~ ~ ~ ~ ~ ~").delay(0.2).sound("gm_sitar").room(0.2).delay(0.2),
   note("<d#5 b4 a#4 ~ ~ g#4 a#4 b4>*8").sound("gm_sitar").room(0.2).delay(0.2),
   note("~"),
