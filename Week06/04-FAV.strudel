@@ -10,13 +10,21 @@ BbM7 A7   Dm9     G13
 F7  A7    Dm7     G13
 >`)
 
+let secC = stack(
+  n("9 11 [12 11] 9")
+    .set(chords2)
+    .voicing()
+    .dec(.18)
+)
+
 let secA = stack(
   s("gm_kalimba:5").seg(16).dec(.1).fm(time).fmh(time).gain(0.5),
   
   n("9 11 [12 11] 9")
     .set(chords2)
     .voicing()
-    .dec(.18),
+    .dec(.18)
+    .room(.3),
 
   chords2
     .struct("x - - x")
@@ -50,7 +58,7 @@ let secB = stack(
 )
 
 $: arrange(
+  [2, secC],
   [4, secA],
-  [4, secB],
-  
+  [4, secB]
 )
