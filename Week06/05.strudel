@@ -1,0 +1,51 @@
+// @title W06-05
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 20, 2026
+
+
+setCps(140/60/4)
+const dbank = "tr505"
+samples({
+  crowd:'https://cdn.freesound.org/previews/65/65855_554716-lq.mp3'
+})
+
+
+let secA = stack(
+  s("crowd").slice(28, "<1 2 ~ 3 4 5 ~ 6 7 8 ~ 9 10>").delay(0.2).room(0.5).dist(3).gain(0.01).legato(2),
+  s("hh!8").gain(0.5).sometimesBy(0.1, x => x.ply("2 | 4")),
+  s("bd").struct("{1 0 0 1 0 1 0}%8").bank(dbank).n(irand(5)))
+
+samples({
+  voice:'https://cdn.freesound.org/previews/192/192111_3568632-lq.mp3',
+})
+
+let secB = stack(
+  note("<a#4, g4, d#4> <b4, g#4,e4> <g#4,f4,c#4>").sound("gm_synth_choir:7").struct("1 0 0 0 1 0 0 1")
+)
+
+let secC = stack(
+  s("bd:4 (1,3,3.05)")
+    .gain(1.2),
+
+  s("gm_choir_aahs:4 | gm_choir_aahs:3 | gm_choir_aahs:1 | gm_choir_aahs:2")
+    .gain(0.6)
+    .room(0.4)
+    .mask("<~ ~ ~ 1>"),
+  
+  s("<~ shaker_large:6>").legato(0.4)
+).every(4, x=>x.slow(2)) 
+
+stack(
+  arrange(
+  [4, secA],
+  [4, secC], 
+)
+  ,
+  s("sd").bank(dbank).beat("4,12",16),
+  s("sbd!4").gain(0.8).distort("3:.3"),
+  note("<a#4, g4, d#4> <b4, g#4,e4> <g#4,f4,c#4>").sound("gm_synth_choir:7").struct("1 0 0 0 1 0 0 1"),
+  n("0 1 2 3 5 4 5 1").chord("Cm").mode("above:c3").voicing().clip(2).s("gm_electric_guitar_clean").degradeBy(0.2).every(4, x=>x.ply(3)).gain(0.5),
+)
+
+
