@@ -1,0 +1,79 @@
+// @title W06-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 16, 2026
+
+setcps(140/60/4)
+
+let sec1 = stack(
+   s("bd*2").bank('RolandTR909'),
+  
+  n("{0 1 0 1 3 2 3 2}")
+  .scale("C:vietnamese:1")
+  .sound("gm_xylophone")
+  .every(4, x=>x.ply(2))
+  .every(4, x=>x.late(1))
+  .degradeBy(0.2)
+  .pan(square.fast(6)).room(.7).gain(0.8)
+  .gain(1.5),
+  
+  n("{0 1 0 1 3 2 3 2}")
+  .scale("C:vietnamese:1")
+  .sound("gm_violin")
+  .every(4, x=>x.ply(2))
+  .every(4, x=>x.late(1))
+  .degradeBy(0.2)
+  .gain(),
+  )
+
+let sec1a = stack(
+  chord("<C11 Csus F11 Fsus>").voicing().s("sine").gain(0.5).speed(0.5),
+  
+  n("3 ~ [~ 1] ~ 1 ~ [[~ 1??] 1] ~").slow(2).sound("bd:4").gain(1.5),
+  n("0 2 4 <7!8 9?>")
+  .scale("d:minor")
+  .mode("below:d2")
+  .legato(0.8)
+  .fast(4)
+  .gain(0.25)
+  .room(0.5)
+  .delay(1)
+  .size(1)
+)
+
+let sec1b = stack(
+  n("0 ~ [~ 0] ~ 0 ~ [[~ 0??] 0] ~").slow(2).sound("bd").bank("garden"),
+  n("[~ 2]!2").sound("sd"),
+  n("1*16").sound("hh").gain(1),
+  n("~!4 [~ 1] ~ ~ [~ 1] ~!4 [1? 1] 1?? ~ [~ 1]").sound("cp").gain(1.5).slow(2).room(0.5)
+)
+
+let sec2 = stack(
+  n("{0 1 0 1 3 2 3 2}")
+  .scale("C:vietnamese:2")
+  .sound("gm_fx_rain")
+  .every(4, x=>x.ply(2))
+  .every(4, x=>x.late(1))
+  .degradeBy(0.2)
+  .legato(2)
+  .gain(1),
+  
+  s("bd*2").bank('RolandTR909')
+  ,
+
+  n("{0 1 0 1 3 2 3 2}")
+  .scale("C:vietnamese:1")
+  .sound("gm_violin")
+  .every(4, x=>x.ply(2))
+  .every(4, x=>x.late(1))
+  .degradeBy(0.2)
+  .gain()
+)
+
+$: arrange(
+  [4, sec1],
+  [4, sec1a],
+  [4, sec2],
+  [4, sec1a],
+  [4, sec1.room(saw.slow(4)).gain(saw.slow(4).range(0.5, 1))]
+)
