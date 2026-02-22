@@ -28,17 +28,7 @@ let sec1 = stack(
 
 let sec1a = stack(
   chord("<C11 Csus F11 Fsus>").voicing().s("sine").gain(0.5).speed(0.5),
-  
-  n("3 ~ [~ 1] ~ 1 ~ [[~ 1??] 1] ~").slow(2).sound("bd:4").gain(1.5),
-  n("0 2 4 <7!8 9?>")
-  .scale("d:minor")
-  .mode("below:d2")
-  .legato(0.8)
-  .fast(4)
-  .gain(0.25)
-  .room(0.5)
-  .delay(1)
-  .size(1)
+  n("3 ~ [~ 1] ~ 1 ~ [[~ 1??] 1] ~").slow(2).sound("bd:4").gain(1.5)
 )
 
 let sec1b = stack(
@@ -55,6 +45,7 @@ let sec2 = stack(
   .every(4, x=>x.ply(2))
   .every(4, x=>x.late(1))
   .degradeBy(0.2)
+  .pan(square.fast(6)).room(.7).gain(0.8)
   .legato(2)
   .gain(1),
   
@@ -73,7 +64,5 @@ let sec2 = stack(
 $: arrange(
   [4, sec1],
   [4, sec1a],
-  [4, sec2],
-  [4, sec1a],
-  [4, sec1.room(saw.slow(4)).gain(saw.slow(4).range(0.5, 1))]
+  [4, sec2]
 )
