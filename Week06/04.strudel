@@ -1,0 +1,56 @@
+// @title W06-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 19, 2026
+
+let chords2 = chord(`<
+Dm9   G13   F7    A7
+FM9 Em7   A7      Dm9
+BbM7 A7   Dm9     G13
+F7  A7    Dm7     G13
+>`)
+
+let secA = stack(
+  s("gm_kalimba:5").seg(16).dec(.1).fm(time).fmh(time).gain(0.5),
+  
+  n("9 11 [12 11] 9")
+    .set(chords2)
+    .voicing()
+    .dec(.18),
+
+  chords2
+    .struct("x - - x")
+    .voicing()
+    .room(.5),
+
+  n("0 0 0 1")
+    .set(chords2)
+    .mode("root:g2")
+    .voicing()
+)
+
+let secB = stack(
+  s("gm_kalimba").seg(16).dec(.1).fm(time).fmh(time).gain(0.5),
+  
+  n("[11 14] 12 11 [9 11]")
+    .set(chords2)
+    .voicing()
+    .dec(.12)
+    .room(.3),
+
+  chords2
+    .struct("x - x x")
+    .voicing()
+    .room(.6),
+
+  n("0 1 0 -")
+    .set(chords2)
+    .mode("root:g2")
+    .voicing()
+)
+
+$: arrange(
+  [4, secA],
+  [4, secB],
+  
+)
