@@ -1,0 +1,40 @@
+// @title W06-03
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 18, 2026
+
+let chords = chord(`<
+F7 Bb7 F7 [Cm7 F7]
+Bb7 Bo F7 [Am7 D7]
+Gm7 C7 [F7 D7] [Gm7 C7]
+>`)
+
+let sec1a = stack(
+n("7 8 [10 9] 8").set(chords).voicing().dec(.2),
+) 
+
+let sec1b = stack(
+n("7 8 [10 9] 8").set(chords).voicing().dec(.2),
+  
+chords.struct("- x - x").voicing().room(.5),
+  
+n("0 - 1 -").set(chords).mode("root:g2").voicing()
+)
+
+let sec1c = stack(
+  n("[9 7] 8 [10 9] 8").set(chords).voicing().dec(.15),
+
+  chords.struct("x - x -").voicing().room(.6),
+
+  n("- 0 - 1").set(chords).mode("root:g2").voicing()
+)
+
+$: arrange(
+  [4, sec1b],
+  [4, sec1c],
+  [2, sec1a]  
+)
+
+
+
+
