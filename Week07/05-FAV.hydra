@@ -1,0 +1,14 @@
+// @title W07-05
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 27, 2026
+
+// 05
+
+voronoi(5,1,2)
+  .diff(shape(1,1.1,0.01)
+        .scale(()=>Math.sin(time)*0.05 + 0.9)
+        .kaleid(60)
+        .color(9,2,1)
+        .rotate(()=>time%360))
+  .out()
