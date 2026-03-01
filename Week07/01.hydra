@@ -1,0 +1,8 @@
+// @title W07-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 23, 2026
+
+// 01
+
+src(o0).modulate(noise(2),0.003).color(0.5,1,2).blend(shape(4),0.01).out(o0)
