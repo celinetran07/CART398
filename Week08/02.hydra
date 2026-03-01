@@ -1,0 +1,15 @@
+// @title W08-02
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 3, 2026
+
+// 02
+
+osc(10, 0.05, 0.7).mult(osc(1, -0.1).modulate(osc(2).rotate(1,1), 30))
+.color(4,9,1)
+.saturate(0.7)
+.kaleid(3)
+.luma(1,0.1, (6, ()=> 1 + a.fft[3]))
+.scale(0.2, ()=> 0.5 + a.fft[3])
+.diff(o0)
+.out(o0)
