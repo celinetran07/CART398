@@ -1,0 +1,7 @@
+// @title W07-02
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 24, 2026
+
+// 02
+shape(3,0.03,0.8).rotate( () => time%360 ).color(1,0.7,4).invert(()=>Math.sin(time)*2).out(o0)
