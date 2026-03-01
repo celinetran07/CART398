@@ -1,0 +1,8 @@
+// @title W08-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 2, 2026
+
+// 01
+
+osc(5).add(noise(5, 7)).color(1, 0, 3).colorama(0.8).mult(osc(10,1,2)).kaleid(6).out()
