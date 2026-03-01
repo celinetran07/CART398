@@ -1,0 +1,8 @@
+// @title W07-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date Feb 26, 2026
+
+// 04
+
+osc(30, 0.3, 4).kaleid(50).kaleid(4).scrollX(0, () => Math.sin(time*0.02)*0.07).out(o0)
