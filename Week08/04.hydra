@@ -1,0 +1,16 @@
+// @title W08-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 5, 2026
+
+// 04
+
+osc(10, 1, 0.9)
+  .color(1, 1.9,2)
+  .kaleid()
+  .modulate(o0, 0.03)
+  .mult(osc(60, 0.001, 0).rotate(2.7))
+  .blend(o0, 0.4).modulateScale(osc(1.5, 80),-0.09)
+  .scale(1, () => (1 + 0.1 * Math.sin(2*time)))
+  .rotate(0.011, () => Math.sin(time) * -0.0001)
+  .out(o0)
