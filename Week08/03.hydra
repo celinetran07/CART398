@@ -1,0 +1,13 @@
+// @title W08-03
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 4, 2026
+
+// 03
+
+
+osc(50, 0.01, ({time}) => Math.sin(time/10) * 20)
+	.rotate(0, 0.3)
+  .kaleid(50).kaleid(5)
+	.mult(osc(80, 0.1).modulate(osc(10).rotate(1, 0.4), 2).invert(()=>Math.sin(time)))
+  .out()
