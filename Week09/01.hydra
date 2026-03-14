@@ -1,0 +1,15 @@
+// @title W09-01
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 9, 2026
+
+// 01
+
+voronoi(5,3,2)
+  .color(7, 1.9,2.3)
+  .modulate(o0, 0.8)
+  .kaleid(3)
+  .scale(-1,1,1)
+  .add(shape(3, 0.3, 0.001).rotate(()=>time%360).color(1, 0, 0), 1)
+  .contrast( () => Math.sin(time) * 1 )
+  .out(o0)
