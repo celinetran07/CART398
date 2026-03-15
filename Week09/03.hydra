@@ -1,0 +1,13 @@
+// @title W09-03
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 11, 2026
+
+// 03
+
+voronoi(2,0.5,10)
+  .modulate(noise(),0.2)
+  .colorama(0.1)
+  .kaleid(2)
+  .rotate(2.10,0.5)
+  .out()
