@@ -1,0 +1,18 @@
+// @title W09-04
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 12, 2026
+// @based-on "ee_1 . EYE IN THE SKY" by e_e @eerie_ear
+
+//04
+
+noise(18)
+  .color(78, 3, 0.2) 
+  .posterize(8)
+  .kaleid(50)
+  .mask(
+    shape(20, 0.50).modulateScale(noise(10, 5))
+  )
+  .contrast( () => Math.sin(time) * 0.5 )
+  .rotate(() => time * 0.2)
+  .out();
