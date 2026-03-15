@@ -1,0 +1,16 @@
+// @title W09-02
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by celine tran
+// @date March 10, 2026
+// @based-on "Really Love" by Abhinay Khoparzi http://khoparzi.com
+
+//02
+
+osc(50,-0.03,6)
+  .pixelate(50)
+  .add(noise(2))
+  .kaleid(()=>(Math.sin(time/8)*9+3))
+  .rotate(2.5,0.5)
+  .modulateRotate(shape(3).scale(()=>(Math.cos(time)*1.5)).rotate(0,-0.15))
+  .diff(src(o0).brightness(0.6))
+  .out()
